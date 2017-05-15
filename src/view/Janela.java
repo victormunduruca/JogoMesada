@@ -69,9 +69,14 @@ public class Janela {
 	private void initialize() {
 		
 		controller = new Controller();
-		Pino pino = new Pino("testePonteiro.png");
-		Pino pino2 = new Pino("testePonteiro2.png");
-
+		
+		Pino pinoAmarelo = new Pino("pinoAmarelo.png");
+		Pino pinoAzul = new Pino("pinoAzul.png");
+		Pino pinoRosa = new Pino("pinoRosa.png");
+		Pino pinoRoxo = new Pino("pinoRoxo.png");
+		Pino pinoVerde = new Pino("pinoVerde.png");
+		Pino pinoVermelho = new Pino("pinoVermelho.png");
+		
 		JPanel panel = new JPanel();
 		JLayeredPane jLay = new JLayeredPane();
 		JLabel imagemTabuleiro = new JLabel(new ImageIcon("Tabuleiro.png"));
@@ -86,8 +91,13 @@ public class Janela {
 
 		jLay.setPreferredSize(new Dimension(896, 685));
 		jLay.add(imagemTabuleiro, new Integer(10));
-		jLay.add(pino.getLabel(), new Integer(20));
-		jLay.add(pino2.getLabel(), new Integer(30));
+		
+		jLay.add(pinoAmarelo.getLabel(), new Integer(20));
+		jLay.add(pinoAzul.getLabel(), new Integer(30));
+		jLay.add(pinoRosa.getLabel(), new Integer(40));
+		jLay.add(pinoRoxo.getLabel(), new Integer(50));
+		jLay.add(pinoVerde.getLabel(), new Integer(60));
+		jLay.add(pinoVermelho.getLabel(), new Integer(70));
 
 		imagemTabuleiro.setBounds(0, 0, 896, 685);
 		frame.getContentPane().add(panel);
@@ -98,7 +108,12 @@ public class Janela {
 			int valorDado = 0;
 			public void actionPerformed(ActionEvent arg0) {
 				valorDado = jogaDado();
-				andaDado(valorDado, pino);
+				andaDado(valorDado, pinoAmarelo);
+				andaDado(valorDado, pinoAzul);
+				andaDado(valorDado, pinoRosa);
+				andaDado(valorDado, pinoVerde);
+				andaDado(valorDado, pinoRoxo);
+				andaDado(valorDado, pinoVermelho);
 				JOptionPane.showMessageDialog(null, "Valor do dado foi de = " + valorDado);
 				System.out.println("Valor dado: " +valorDado);
 			}
