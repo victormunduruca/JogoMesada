@@ -5,7 +5,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class Pino {
-	
+
+	private int idJogador;
 	private JLabel label;
 	private int x;
 	private int y;
@@ -33,6 +34,12 @@ public class Pino {
 	}
 	public void setY(int y) {
 		this.y = y;
+	}
+	public int getIdJogador() {
+		return idJogador;
+	}
+	public void setIdJogador(int idJogador) {
+		this.idJogador = idJogador;
 	}
 	
 }

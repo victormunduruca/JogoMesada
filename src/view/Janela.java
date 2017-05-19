@@ -16,12 +16,12 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import controller.Controller;
+
 
 
 public class Janela {
 	
-	private Controller controller;
+	
 	private JFrame frame;
 
 	/**
@@ -68,7 +68,7 @@ public class Janela {
 	 */
 	private void initialize() {
 		
-		controller = new Controller();
+		
 		
 		Pino pinoAmarelo = new Pino("pinoAmarelo.png");
 		Pino pinoAzul = new Pino("pinoAzul.png");
@@ -122,7 +122,7 @@ public class Janela {
 		frame.getContentPane().add(btnRodarDado);	
 		
 		JLabel saldo = new JLabel();
-		saldo.setText("Saldo = " + controller.getSaldoTeste()); //controller.getSaldo();
+		
 		saldo.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 22));
 		saldo.setBounds(77, 756, 360, 51);
 		frame.getContentPane().add(saldo);
@@ -130,7 +130,7 @@ public class Janela {
 		JButton btnMudaSaldo = new JButton("muda saldo");
 		btnMudaSaldo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controller.mudaSaldo();
+				
 			}
 		});
 		btnMudaSaldo.setBounds(1020, 480, 89, 23);
