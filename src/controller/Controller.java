@@ -13,6 +13,7 @@ public class Controller {
 	private int idAtual; //Id do jogador que está em sua vez
 	private int idJogadorMaquina; //Id jogador desse computador
 	private ArrayList<String> cartasCorreio; //Cartas referentes a casa correio
+	private ArrayList<String> bufferCartasCorreio;
 	
 	public Controller() {
 		criaCartas();
@@ -57,10 +58,14 @@ public class Controller {
 		Controller controller = new Controller();
 		Jogador jogador = new Jogador();
 		jogador.setPosicaoPino(3);
-		
 		ArrayList<String> cartinhas = controller.casaCorreio(jogador);
 		
 	}
+	/**
+	 * Método que realiza as ações da casa correio
+	 * @param JogadorAtual
+	 * @return ArrayList referente às cartas aleatórias geradas
+	 */
 	public ArrayList<String> casaCorreio(Jogador jogador) {
 		System.out.println("posicao: " +jogador.getPosicaoPino());
 		int posicao = jogador.getPosicaoPino();
@@ -72,10 +77,15 @@ public class Controller {
 		else if(posicao == 16 || posicao == 3)
 			qtdCartas = 3;
 		System.out.println("qtdcartas: " +qtdCartas);
-		ArrayList<String> cartasCorreios = geraCartasAleatorias(qtdCartas);
+		ArrayList<String> cartasCorreios = geraCartasCorreiosAleatorias(qtdCartas);
 		return cartasCorreios;
 	}
-	public ArrayList<String> geraCartasAleatorias(int qtdCartas) {
+	/**
+	 * Método que gera cartas correios aleatórias
+	 * @param Quantidade de cartas que se deseja obter
+	 * @return Lista contendo a quantidade de cartas correios aleatórias requisitadas
+	 */
+	public ArrayList<String> geraCartasCorreiosAleatorias(int qtdCartas) {
 		ArrayList<String> cartasAleatorias = new ArrayList<String>();
 		Random rand = new Random();
 		for(int i = 0; i < qtdCartas; i++) {
@@ -89,6 +99,9 @@ public class Controller {
 		
 		return cartasAleatorias;
 	}
+	/**
+	 * Método que inicializa as cartas correio
+	 */
 	public void criaCartas() {
 		cartasCorreio = new ArrayList<String>();
 		cartasCorreio.add("contas");
@@ -98,6 +111,31 @@ public class Controller {
 		cartasCorreio.add("cobrança monstro");
 		cartasCorreio.add("vá para frente agora");
 	}
+	/**
+	 * Realiza as açoes da casa correio a partir das cartas aleatórias antes tiradas 
+	 * @param String referente ao tipo de carta que a ação va ser tomada
+	 */
+	public void acaoCasaCorreio(String acao) {
+		if(acao == "contas") {
+			//realiza acao contas
+		} else if(acao == "pague a um vizinho agora") {
+			
+		} else if(acao == "dinheiro extra") {
+			
+		} else if(acao == "doacoes") {
+			
+		} else if(acao == "cobrança monstro") {
+			
+		} else if(acao == "vá para frente agora") {
+			
+		}
+	}
+	/**
+	 * Método para obter o jogador a partir de um determinado id
+	 * @param Id do jogador que se deseja obter
+	 * @return O jogador com o id especificado
+	 * @throws IdNaoEncontradoException
+	 */
 	public Jogador getJogador(int idJogador) throws IdNaoEncontradoException {
 		Iterator<Jogador> it = (Iterator) jogadores.iterator();
 		while(it.hasNext()) {
