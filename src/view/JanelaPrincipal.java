@@ -19,7 +19,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 
 
-public class Janela {
+public class JanelaPrincipal {
 	
 	
 	private JFrame frame;
@@ -47,7 +47,7 @@ public class Janela {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Janela window = new Janela();
+					JanelaPrincipal window = new JanelaPrincipal();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -59,7 +59,7 @@ public class Janela {
 	/**
 	 * Create the application.
 	 */
-	public Janela() {
+	public JanelaPrincipal() {
 		initialize();
 	}
 
@@ -127,14 +127,13 @@ public class Janela {
 		saldo.setBounds(77, 756, 360, 51);
 		frame.getContentPane().add(saldo);
 		
-		JButton btnMudaSaldo = new JButton("muda saldo");
-		btnMudaSaldo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnMudaSaldo.setBounds(1020, 480, 89, 23);
-		frame.getContentPane().add(btnMudaSaldo);
+		JButton btnConsultarSaldos = new JButton("Consultar Saldos");
+		btnConsultarSaldos.setBounds(966, 132, 113, 23);
+		frame.getContentPane().add(btnConsultarSaldos);
+		
+		JButton btnConsultarCartas = new JButton("Consultar Cartas");
+		btnConsultarCartas.setBounds(966, 179, 113, 23);
+		frame.getContentPane().add(btnConsultarCartas);
 	}
 	public void andaDado(int numeroDado, Pino pino) {
 		for(int i = numeroDado; i > 0; i--) {
@@ -146,8 +145,6 @@ public class Janela {
 				pino.setX(0);
 				break;
 			}
-//			if(pino.getX() == 768) //se ele estiver na ultima casa vai ter q iterar mais uma vez
-//				i++;
 			if(pino.getX() >= 768) { //se for igual ao valor fora da borda ele desce
 				pino.getLabel().setBounds(0, pino.getY()+137, 128, 137);
 				pino.setY(pino.getY()+137);
