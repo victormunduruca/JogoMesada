@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import excpeptions.IdNaoEncontradoException;
 import model.Jogador;
 
@@ -55,6 +57,7 @@ public class Controller {
 //		return jogador.getId();
 //	}
 	public static void main(String[] args) {
+		JOptionPane.showConfirmDialog(null, "teste");
 		Controller controller = new Controller();
 		Jogador jogador = new Jogador();
 		jogador.setPosicaoPino(3);
@@ -70,9 +73,9 @@ public class Controller {
 		System.out.println("posicao: " +jogador.getPosicaoPino());
 		int posicao = jogador.getPosicaoPino();
 		int qtdCartas = 0;
-		if(posicao == 1 || posicao == 11 || posicao == 19 || posicao == 22)
+		if(posicao == 1 ||  posicao == 22 || posicao == 19 || posicao == 11)
 			qtdCartas = 1;
-		else if(posicao == 24)
+		else if(posicao == 24 || posicao == 5)
 			qtdCartas = 2;
 		else if(posicao == 16 || posicao == 3)
 			qtdCartas = 3;
